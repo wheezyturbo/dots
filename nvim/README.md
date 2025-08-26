@@ -1,1 +1,0 @@
-# Lazyvim defaults

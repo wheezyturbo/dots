@@ -1,16 +1,6 @@
 require("config.lazy")
 
 
-vim.opt.shiftwidth = 4
-
-
--- highlight on yank
-vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-  group = 'kickstart-highlight-yank',
-  callback = function() vim.highlight.on_yank { timeout = 200 } end,
-})
-
 -- nvim-tree
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = 'Telescope find files' })
@@ -35,8 +25,3 @@ vim.keymap.set("n", "<C-/>", "<cmd>ToggleTerm direction=float<cr>", { desc = "To
 
 
 vim.cmd("set number")
-
-
--- use the system clipboard (unnamedplus) for all operations
-vim.opt.clipboard = "unnamedplus"
-
